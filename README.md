@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12561101&assignment_repo_type=AssignmentRepo)
 # Asymptotic Equivalences
 
 In the lectures, we said that logarithms with different bases don't affect the
@@ -11,3 +12,33 @@ page](https://docs.github.com/en/get-started/writing-on-github/working-with-adva
 might help with the notation for mathematical expressions.
 
 $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0$
+
+Trying to prove that $O(\log_{2} n)$ = $O(\log_{5} n)$
+$T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0$  
+First we would want to define T(n) for each case. Then we could apply the log base rule to each case. We can then change the constant and prove that $O(\log_{2} n)$ = $O(\log_{5} n)$.
+
+For $(\log_{3} n)$:
+
+$T(n) \in O(\log_{2} n) \iff \exists c, n_0: T(n) \leq c(\log_{2} n) \forall n \geq n_0$
+
+Log base rule: $(\log_{b} a) = \frac{(\log_{c} a)}{(\log_{c} b)} = \frac{1}{(\log_{c} b)} (\log_{c} a)$
+
+$T(n) \leq c(\frac{1}{(\log_{3} n)}) \cdot (\log_{5} n)$
+
+Change the constant: 
+$T(n) \leq d(\log_{5} n)$
+
+$T(n) \in O(\log_{5} n)$
+
+For $(\log_{5} n)$:
+
+$T(n) \in O(\log_{5} n) \iff \exists c, n_0: T(n) \leq c(\log_{5} n) \forall n \geq n_0$
+
+Log base rule: $(\log_{b} a) = \frac{(\log_{c} a)}{(\log_{c} b)} = \frac{1}{(\log_{c} b)} (\log_{c} a)$
+
+$T(n) \leq c(\frac{1}{(\log_{5} n)}) \cdot (\log_{3} n)$
+
+Change the constant: 
+$T(n) \leq d(\log_{3} n)$
+
+$T(n) \in O(\log_{3} n)$
